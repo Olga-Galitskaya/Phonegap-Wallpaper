@@ -1,10 +1,11 @@
-var TestPlugin = function () {};
+var Wallpaper = function () {};
 
-TestPlugin.prototype.set = function (ms, successCallback, failureCallback) {
-//  navigator.notification.alert("OMG");
-    return cordova.exec(successCallback, failureCallback, 'testPlugin', "setWallPaper", [ms]);
+Wallpaper.prototype.set = function (url, successCallback, failureCallback) {
+    return cordova.exec(successCallback, failureCallback, 'Wallpaper', "setWallPaper", [url]);
 };
-
-PhoneGap.addConstructor(function() {
-    PhoneGap.addPlugin("test", new TestPlugin());
-})
+if(!window.plugins) {
+    window.plugins = {};
+}
+if (!window.plugins.wallpaper) {
+    window.plugins.wallpaper = new Wallpaper();
+}

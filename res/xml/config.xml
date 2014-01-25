@@ -35,8 +35,8 @@
     <log level="DEBUG"/>
     <preference name="useBrowserHistory" value="true" />
     <preference name="exit-on-suspend" value="false" />
-    <feature name="wallpaper">
-        <param name="android-package" value="com.example.android_app.wallpaper"/>
+    <feature name="Wallpaper">
+        <param name="android-package" value="com.example.android_app.Wallpaper"/>
     </feature>
     <plugins>
         <plugin name="App" value="org.apache.cordova.App"/>
@@ -58,6 +58,7 @@
         <plugin name="Echo" value="org.apache.cordova.Echo" />
         <plugin name="Globalization" value="org.apache.cordova.Globalization"/>
         <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser"/>
+        <plugin name="Wallpaper" value="com.example.android_app.Wallpaper"/>
     </plugins>
 </cordova>
 
