@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta name="viewport" content="width=320; user-scalable=no" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Minimal AppLaud App</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.7.0.js"></script>
+    <script type="text/javascript" charset="utf-8" src="plugin.js"></script>
+    <script type="text/javascript">
+            app.initialize();
+        </script>
+    <script type="text/javascript" charset="utf-8">
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+		for (var i=0; i<3;i++){
+			document.getElementsByTagName('img')[i].addEventListener('click',function(){
+                navigator.notification.alert("setNewWallpaper" + this.className);
+				// prep some variables
+				var imagePath = "www/img/" + this.className + ".jpg";             // Mention the complete path to your image. If it contains under multiple folder then mention the path from level "www" to the level your image contains with its name including its extension.
+				var success = function() { alert("Success"); };           // Do something on success return.
+				var error = function(message) { alert("Oopsie! " + message); };   // Do something on error return.
+
+               window.plugins.test.set(imagePath, success, error);
+			});
+		}
+		 function onDeviceReady()  {
+            navigator.notification.alert("ready!!!");
+             alert("ready2!!!");
+         }
+</script>
+
+</head>
+<body id="stage" class="theme">
+    <h2>Wallpaper set</h2>
+    <img src="img/img1.jpg" class="img1" alt="" width="240" height="200"/>
+    <img src="img/img2.jpg" class="img2" alt="" width="240" height="200"/>
+    <img src="img/img3.jpg" class="img3" alt="" width="240" height="200"/>
+</body>
+</html>
