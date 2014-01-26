@@ -94,14 +94,6 @@ public class Wallpaper extends CordovaPlugin {
             Context ctx = this.cordova.getActivity().getApplicationContext();
             WallpaperManager wallpaperManager = WallpaperManager.getInstance(ctx);
             try {
-                /*InputStream bitmap=null;
-                try {
-                    bitmap=this.cordova.getActivity().getAssets().open("www/img/" + arg1.getString(0));
-                } catch (JSONException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                Bitmap bit=BitmapFactory.decodeStream(bitmap);*/
                 String imageUrl = "";
                 try{
                     imageUrl = arg1.getString(0);
@@ -112,7 +104,6 @@ public class Wallpaper extends CordovaPlugin {
                 wallpaperManager.setBitmap(bit);
                 result = new PluginResult(Status.OK);
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
                 result = new PluginResult(Status.ERROR, e.getMessage());
             }
